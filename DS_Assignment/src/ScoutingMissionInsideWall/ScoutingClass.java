@@ -1,9 +1,5 @@
 package ScoutingMissionInsideWall;
 
-/**
- *
- * @author Muqri Qawiem
- */
 public class ScoutingClass {
 
     final int totalVertex = 16; // total number of nodes inside the map
@@ -13,7 +9,7 @@ public class ScoutingClass {
      * Utility function to check if the "int vertex" can be added to the index
      * "int position" that are stored in array "int[] path"
      */
-    boolean isGood(int vertex, int graph[][], int[] path, int position) {
+    public boolean isGood(int vertex, int graph[][], int[] path, int position) {
         /**
          * First criteria: To check if the vertex is an adjacent vertex of the
          * previous vertex
@@ -37,7 +33,7 @@ public class ScoutingClass {
     /**
      * Recursive utility function to find hamiltonian cyle
      */
-    boolean hamiltonianCycleUtility(int[][] graph, int[] path, int position) {
+    public boolean hamiltonianCycleUtility(int[][] graph, int[] path, int position) {
         // if all vertex included in the hamiltonian cycle
         if (position == totalVertex) {
             // if there is vertex from last included vertex to the first vertex
@@ -68,7 +64,7 @@ public class ScoutingClass {
         return false;
     }
 
-    int hamiltonianCycle(int[][] graph, int startingPoint) {
+    public int hamiltonianCycle(int[][] graph, int startingPoint) {
         path = new int[totalVertex];
         for (int i = 0; i < totalVertex; i++) {
             path[i] = -1;
@@ -87,7 +83,7 @@ public class ScoutingClass {
     /**
      * function to display the solution
      */
-    void displaySolution(int[] path) {
+    public void displaySolution(int[] path) {
         System.out.println("\nPath found! ");
         for (int i = 0; i < totalVertex; i++) {
             System.out.print(path[i] + " => ");
